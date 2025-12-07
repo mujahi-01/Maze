@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (y < ROWS - 1 && mazeMap[y + 1][x] === 1) cell.classList.add('wall-bottom');
                     if (x > 0 && mazeMap[y][x - 1] === 1) cell.classList.add('wall-left');
                 } else {
-                    // Wall cell - apply a slight background to differentiate it
+                    // Wall cell 
                     cell.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
                     cell.style.border = '1px solid rgba(255, 255, 255, 0.1)';
                 }
