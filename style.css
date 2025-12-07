@@ -1,0 +1,141 @@
+/* General Setup */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; 
+    position: relative;
+    background-color: #f0f8ff; /* Fallback */
+}
+
+/* Dynamic Background for Glassmorphism Effect */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient background that shifts for a liquid/dynamic feel */
+    background: linear-gradient(135deg, #a8dadc, #457b9d, #1d3557);
+    background-size: 200% 200%;
+    animation: gradientShift 20s ease infinite;
+    z-index: -1; 
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism Styling for Game Container */
+.game-container {
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); 
+    backdrop-filter: blur(10px); /* The core glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Light border */
+    color: #fff;
+    text-align: center;
+    max-width: 90vw;
+    margin: 20px 0;
+}
+
+h1 {
+    margin-top: 0;
+    color: #f1faee;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#maze {
+    display: inline-block;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 15px;
+}
+
+/* Maze Cell Styling */
+.cell {
+    float: left;
+    background-color: transparent; 
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Wall Borders (The visual representation of the maze path) */
+.wall-top { border-top: 2px solid #457b9d; }
+.wall-right { border-right: 2px solid #457b9d; }
+.wall-bottom { border-bottom: 2px solid #457b9d; }
+.wall-left { border-left: 2px solid #457b9d; }
+
+/* Player and Goal */
+.player {
+    width: 80%;
+    height: 80%;
+    background-color: #e63946; /* Player color */
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transition: all 0.2s ease-in-out; /* Smooth, playful movement */
+    box-shadow: 0 0 10px #e63946, 0 0 5px rgba(0,0,0,0.8);
+}
+
+.goal::after {
+    content: '🏁';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em; 
+}
+
+/* Mobile Controls Styling (Glassmorphism on controls) */
+.controls {
+    display: none; 
+    margin-top: 20px;
+    z-index: 10;
+}
+
+.control-btn {
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    font-size: 1.5em;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.control-btn:active {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.horizontal-controls {
+    display: flex;
+    justify-content: center;
+}
+
+/* Mobile Viewport Adjustments */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+    }
+    
+    .controls {
+        display: flex; /* Show controls on mobile */
+        flex-direction: column;
+        align-items: center;
+    }
+}
