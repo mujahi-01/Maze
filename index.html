@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="background"></div>
+    
     <div class="game-container">
         <h1>Glass Maze</h1>
         <div id="maze">
@@ -15,6 +16,30 @@
         <div id="message">Use Arrow Keys or Mobile Controls to Play!</div>
     </div>
     
+    <section id="gallery-container">
+        <h2>Glass Assets</h2>
+        <div class="gallery-grid">
+            
+            <div class="gallery-item">
+                <h3>Frosted Image</h3>
+                <img src="images/Frosted-Trees.jpg" alt="Frosted Trees Art" class="glass-asset-img">
+            </div>
+
+            <div class="gallery-item">
+                <h3>Liquid Video</h3>
+                <video src="images/VID_20251022_002805_873.mp4" 
+                       autoplay 
+                       loop 
+                       muted 
+                       playsinline 
+                       class="glass-asset-video">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+        </div>
+    </section>
+
     <div class="controls">
         <button id="up" class="control-btn" data-move="up">⬆️</button>
         <div class="horizontal-controls">
@@ -24,19 +49,6 @@
         <button id="down" class="control-btn" data-move="down">⬇️</button>
     </div>
 
-    <div class="gallery-container">
-        <h2>Game Media Gallery</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <h3>Frosted Trees (Image)</h3>
-                <img src="images/Frosted-Trees.jpg" alt="A photo of frosted trees">
-            </div>
-            <div class="gallery-item">
-                <h3>Video Clip (MP4)</h3>
-                <video src="images/VID_20251022_002805_873.mp4" controls></video>
-            </div>
-        </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
