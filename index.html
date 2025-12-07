@@ -3,27 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glass Maze Game</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Gallery</title>
+    <style>
+        /* Simple styling for the gallery layout */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Adjust as needed */
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="game-container">
-        <h1>Glass Maze</h1>
-        <div id="maze">
-            </div>
-        <div id="message">Use Arrow Keys or Mobile Controls to Play!</div>
-    </div>
 
-    <div class="controls">
-        <button id="up" class="control-btn" data-move="up">⬆️</button>
-        <div class="horizontal-controls">
-            <button id="left" class="control-btn" data-move="left">⬅️</button>
-            <button id="right" class="control-btn" data-move="right">➡️</button>
+    <header>
+        <h1>🖼️ My Media Gallery</h1>
+    </header>
+
+    <main class="gallery">
+        <div class="gallery-item">
+            <h2>Frosted Trees</h2>
+            <img src="images/Frosted-Trees.jpg" alt="A photo of trees covered in frost.">
+            <p>A beautiful shot of frosted trees.</p>
         </div>
-        <button id="down" class="control-btn" data-move="down">⬇️</button>
-    </div>
 
-    <script src="script.js"></script>
+        <div class="gallery-item">
+            <h2>2025 Video Clip</h2>
+            <video src="images/VID_20251022_002805_873.mp4" controls>
+                Your browser does not support the video tag.
+            </video>
+            <p>A short video clip from October 2025.</p>
+        </div>
+    </main>
+
 </body>
 </html>
